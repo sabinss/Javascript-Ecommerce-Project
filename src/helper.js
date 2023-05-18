@@ -19,8 +19,22 @@ const getStorageItem = (item) => {
   return storageItem;
 };
 
+const getElement = (selection) => {
+  const element = document.querySelector(selection);
+  if (element) return element;
+  throw new Error(
+    `Please check "${selection}" selector, no such element exist`
+  );
+};
+
 const setStorageItem = (name, item) => {
   localStorage.setItem(name, JSON.stringify(item));
 };
 
-export { allProductsUrl, singleProductUrl, getStorageItem, setStorageItem };
+export {
+  allProductsUrl,
+  singleProductUrl,
+  getStorageItem,
+  setStorageItem,
+  getElement,
+};
