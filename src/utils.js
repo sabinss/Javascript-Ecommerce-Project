@@ -9,4 +9,23 @@ const allProductsUrl = 'https://course-api.com/javascript-store-products';
 const singleProductUrl =
   'https://course-api.com/javascript-store-single-product';
 
-export { allProductsUrl, singleProductUrl };
+const getStorageItem = (item) => {
+  let storageItem = localStorage.getItem(item);
+
+  if (storageItem) {
+    return JSON.parse(localStorage.getItem(item));
+  } else {
+    return [];
+  }
+};
+
+const setLocalStorageItem = (key, value) => {
+  localStorage.setItem(name, JSON.stringify(key));
+};
+
+export {
+  allProductsUrl,
+  singleProductUrl,
+  getStorageItem,
+  setLocalStorageItem,
+};
