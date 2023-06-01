@@ -15,9 +15,9 @@ cartClose.addEventListener('click', function () {
   cartOverlay.classList.remove('show');
 });
 
-function openCart() {
-  cartOverlay.classList.add('show');
-}
+// function openCart() {
+//   cartOverlay.classList.add('show');
+// }
 
 function displayCartItemCount() {
   const count = cart.reduce((acc, value) => {
@@ -60,6 +60,8 @@ function updateTotalAmount() {
   cartTotal.innerHTML = `$${totalAmount}`;
 }
 
+function countCartItem() {}
+
 function addToCart(productId) {
   let product;
   let cartItem = cart.find((x) => x.id === productId);
@@ -84,6 +86,11 @@ function addToCart(productId) {
   updateTotalAmount();
   displayCartItemCount();
   openCart();
+}
+
+function openCart() {
+  const cartOverlay = document.querySelector('.cart-overlay');
+  cartOverlay.classList.add('show');
 }
 
 export { addToCart };

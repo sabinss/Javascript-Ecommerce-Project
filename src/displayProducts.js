@@ -5,7 +5,6 @@ function test() {
 }
 function displayProducts(products, element) {
   const featureElement = document.querySelector(element);
-  console.log('displayProducts', products, featureElement);
   featureElement.innerHTML = products
     .map((product) => {
       return `
@@ -33,7 +32,6 @@ function displayProducts(products, element) {
 
   featureElement.addEventListener('click', function (e) {
     if (e.target.parentElement.classList.contains('product-cart-btn')) {
-      console.log('addTOCart', e.target.parentElement.dataset.id);
       addToCart(e.target.parentElement.dataset.id);
     }
     // addToCar()
